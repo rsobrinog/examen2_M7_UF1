@@ -4,7 +4,7 @@
 En aquest arxiu es proposa un codi per connectar a una BBDD de XAMPP segons els camps entrats pel
 formulari (views/index.html).
 
-1. Fer la connexió a la BBDD
+1. Fer la trucada a la connexió a la BBDD
 2. Crear la consulta per inserir usuari nou
 3. Enviar la query
 4. Enviar missatge d'error si la query és incorrecta.
