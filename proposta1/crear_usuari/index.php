@@ -21,32 +21,39 @@ Cal posar comentari significatiu allà on posi "Posar comentari"
 
 
 // Incluir l'arxiu de conexxió (db_connection.php)
-
+include_once '../db_connection.php';
 
 // Posar comentari
-if (set($_POST['send'])){
-    $id = $_POST['id'];
+// si se realizó la request mediante POST, el valor 'send' se encuentra seteado. entonces
+//  tomamos los valores de la superglobal POST
+if (isset($_POST['send'])){
+    $id = $_POST['id'];     // id autoincrement, no la añado a la query
     $nom = $_POST['name'];
     $cognom = $_POST['Sname'];
     $rol_user = $_POST['Ruser'];
     $pass = $_POST['pass_user'];
     $email = $_POST['email_user'];
     $actiu = $_POST['active'];
+    if ($actiu) {               // tengo el campo active en tinyint 0-1, por eso lo cambio a 
+        $actiu = 1;             // estos valores
+    } else {
+        $actiu = 0;
+    }
 
 
     //Es crea la consulta per inserir les dades del formulari index.html
-    
+    $consulta = `INSERT into user values (${rol_user}, ${nom}, ${cognom}, ${pass}, ${email}, ${actiu})`;
 
     
     //Posar comentari
-    $result = ($conn, $consulta);
+    $result = mysqli_query($conn, $consulta);   // si la query se realiza correctamente, devuelve un true
        
     if(!$result){
         die("Query fail!");
     }
 
 
-    header("Location: ");
+    header("Location: ../views/index.html");
     exit;
 }
 

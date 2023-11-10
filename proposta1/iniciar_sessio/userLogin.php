@@ -1,18 +1,8 @@
 <?php
-/*
---------------------------------- EXERCICI EXAMEN -----------------------------------------
-Cal completar i/o trobar errors per a que aquest arxiu pugui:
- - Connectar-se a la BBDD
- - Crear la consulta per buscar usuari a través de les dades passades per formulari (views/login.html)
- - Enviar la consulta per a retornar un objecte amb dades (si existeix)
- - Adaptar la verificació de la consulta $response.
- - Direccionament a la view corresponent
--------------------------------------------------------------------------------------------
-*/
-
-
+    echo 'pre conn. estamos en userlogin.php, o sea que el formulario va bien';
    // Incluir l'arxiu de conexxió (db_connection.php)
-    
+   include '../db_connection.php';
+   // no va esta mierda de include 
 
     if (isset($_POST['signin'])){
         $email = $_POST['new_email'];
@@ -21,19 +11,24 @@ Cal completar i/o trobar errors per a que aquest arxiu pugui:
 
         //Consulta la BBDD per buscar usuari segons email i password
         
+        $query = "SELECT * FROM user WHERE email = '$email' 
+                and password = '$passwd'";
+        
+        $response = mysqli_query($conn, $query);
 
         //Posar comantari
-        $response = ($conn, $sql);
+        // Validamos el resultado de la query. si es null, da error. si hay un valor, devolvemos el 
+        // primero
 
         if(!$response){
             echo "Hi ha un error en la consulta";
         }else{
             echo "consulta correcte";
-            
+            $rows = mysqli_fetch_all($response, MYSQLI_ASSOC);
         }
 
         //Direccionament a la view usuari.php
-        
+        include('../views/usuari.php');
         
     }else{
         echo"Hi ha hagut algun error";
