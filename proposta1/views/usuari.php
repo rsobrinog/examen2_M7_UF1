@@ -6,6 +6,7 @@ En aquest arxiu s'hi mostraran TOTES les dades de l'usuari (independentment del 
 */
 
 //incluir userLogin.php
+include('../iniciar_sessio/userLogin.php');
 
 ?>
 
@@ -18,13 +19,16 @@ En aquest arxiu s'hi mostraran TOTES les dades de l'usuari (independentment del 
 </head>
 <body>
     <h1>INFORMACIÓ USUARI</h1>
+    
     <?php
-        //
-        foreach (){
-            echo "ID usuari: ". ;
-            echo "Nom usuari: " . ;
-            echo "Cognom usuari: " . ;
-            echo "Rol usuari: " . ;
+        //Obtenim i mostrem les dades del usuari 
+        $user = $response->fetch_assoc();
+
+        foreach ($user as $usuari){
+            echo "ID usuari: ".$usuari['id'];
+            echo "Nom usuari: ".$usuari['name'];
+            echo "Cognom usuari: ".$usuari['surname'];
+            echo "Rol usuari: ".$usuari['rol'];
         }
     ?>
 </body>

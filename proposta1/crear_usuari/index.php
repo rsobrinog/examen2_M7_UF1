@@ -21,10 +21,10 @@ Cal posar comentari significatiu allà on posi "Posar comentari"
 
 
 // Incluir l'arxiu de conexxió (db_connection.php)
+include('../db_connection.php');
 
-
-// Posar comentari
-if (set($_POST['send'])){
+// Comprovem que l'usuari hagi clicat al botó d'enviar 
+if (isset($_POST['send'])){
     $id = $_POST['id'];
     $nom = $_POST['name'];
     $cognom = $_POST['Sname'];
@@ -33,21 +33,27 @@ if (set($_POST['send'])){
     $email = $_POST['email_user'];
     $actiu = $_POST['active'];
 
-
+    if($actiu == 'si'){
+        $actiu = 'True';
+    }else {
+        $actiu = 'False';
+    }
     //Es crea la consulta per inserir les dades del formulari index.html
     
-
+    $consulta = "INSERT INTO `users`(`id`, `rol`, `name`, `surname`, `password`, `email`, `active`) VALUES ($id,'$rol_user','$nom','$cognom','$pass','$email',$actiu)";
     
-    //Posar comentari
-    $result = ($conn, $consulta);
+    //Obtenim el resultat de la consulta 
+    $result = mysqli_query($conn, $consulta);
        
     if(!$result){
         die("Query fail!");
     }
 
 
-    header("Location: ");
+    header("Location: ../views/login.html");
     exit;
 }
+
+
 
 ?>
