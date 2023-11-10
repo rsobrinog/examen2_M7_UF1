@@ -7,19 +7,22 @@
 </head>    
 </body>
     <!--  POSAR COMENTARI GENERAL -->
+    <!-- Formulari per iniciar sessió i rebre les dades de l'usuari dins de la nostra base de dades -->
+    <!-- Usem mètode POST per passar les dades i fem action a usuari.php per mostrar les dades -->
+    <!-- usuari.php té un include del nostre userLogin.php per poder fer servir les variables de les consultes -->
     <div>
         <h1>Iniciar sessió de l'usuari</h1>    
     </div>
     <div class="dropdown-menu">
         <!-- Mirar a quin arxiu va aquest formulari i afegir-ho -->
-        <form class="px-4 py-3">
+        <form class="px-4 py-3" method="POST" action="usuari.php"> <!-- l'action ho fem a usuari.php, ja que hi hem fet un include d'userLogin.php -->
             <div class="form-group">
                 <label for="exampleDropdownFormEmail1" >Email address</label>
-                <input type="email" class="form-control" placeholder="email@example.com" required>
+                <input name="new_email" type="email" class="form-control" placeholder="email@example.com" required>
             </div>
             <div class="form-group">
                 <label for="exampleDropdownFormPassword1" >Password</label>
-                <input type="password" class="form-control" placeholder="Password" required>
+                <input name="new_password" type="password" class="form-control" placeholder="Password" required>
             </div>
             <div class="form-check">
                 <input type="checkbox" class="form-check-input" id="dropdownCheck">
@@ -29,8 +32,8 @@
             </div>
             <button type="submit" class="btn btn-primary" name="signin">Sign in</button>
             <div>
-            <!-- POSAR ENLLAÇ a la view index.php-->
-            <a >Crear usuari</a> 
+            <!-- POSAR ENLLAÇ a la view index.html-->
+            <a href="index.html">Crear usuari</a> 
             </div>
         </form>
     </div>
