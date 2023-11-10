@@ -6,6 +6,7 @@ En aquest arxiu s'hi mostraran TOTES les dades de l'usuari (independentment del 
 */
 
 //incluir userLogin.php
+include("../iniciar_sessio/userLogin.php");
 
 ?>
 
@@ -20,11 +21,11 @@ En aquest arxiu s'hi mostraran TOTES les dades de l'usuari (independentment del 
     <h1>INFORMACIÓ USUARI</h1>
     <?php
         //
-        foreach (){
-            echo "ID usuari: ". ;
-            echo "Nom usuari: " . ;
-            echo "Cognom usuari: " . ;
-            echo "Rol usuari: " . ;
+        foreach ($response as $user){
+            echo "ID usuari: ". $user["id"];
+            echo "Nom usuari: " . $user["nombre"];
+            echo "Cognom usuari: " . $user["apellido"];
+            echo "Rol usuari: " . $user["rol"];
         }
     ?>
 </body>

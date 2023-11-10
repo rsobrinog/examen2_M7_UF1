@@ -6,31 +6,33 @@
     <title>PRÀCTICA 4 - LOGIN</title>
 </head>    
 </body>
-    <!--  POSAR COMENTARI GENERAL -->
+    <!--  POSAR COMENTARI GENERAL
+    Este archivo trabaja con un formulario en formato POST para enviar los datos
+    al archivo que maneja la lógica del Login -->
     <div>
         <h1>Iniciar sessió de l'usuari</h1>    
     </div>
     <div class="dropdown-menu">
         <!-- Mirar a quin arxiu va aquest formulari i afegir-ho -->
-        <form class="px-4 py-3">
+        <form action="../iniciar_sessio/userLogin.php" method="post" class="px-4 py-3">
             <div class="form-group">
                 <label for="exampleDropdownFormEmail1" >Email address</label>
-                <input type="email" class="form-control" placeholder="email@example.com" required>
+                <input type="email" name="new_email" class="form-control" placeholder="email@example.com" required>
             </div>
             <div class="form-group">
                 <label for="exampleDropdownFormPassword1" >Password</label>
-                <input type="password" class="form-control" placeholder="Password" required>
+                <input type="password" name="new_password" class="form-control" placeholder="Password" required>
             </div>
             <div class="form-check">
-                <input type="checkbox" class="form-check-input" id="dropdownCheck">
+                <input type="checkbox" name="checkbox" class="form-check-input" id="dropdownCheck">
                 <label class="form-check-label" for="dropdownCheck">
                 Remember me
                 </label>
             </div>
-            <button type="submit" class="btn btn-primary" name="signin">Sign in</button>
+                <button type="submit" name="inici" class="btn btn-primary">Sign in</button>
             <div>
-            <!-- POSAR ENLLAÇ a la view index.php-->
-            <a >Crear usuari</a> 
+                <!-- POSAR ENLLAÇ a la view index.html-->
+                <a href="index.html">Crear usuari</a> 
             </div>
         </form>
     </div>

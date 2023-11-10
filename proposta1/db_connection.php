@@ -13,12 +13,20 @@
     */
 
     //Assignació dades BBDD
-    $db_host = "";
-    $db_user = "";
+    $db_host = "localhost:4306";
+    $db_user = "root";
     $db_passwd = "";
-    $db_name = "";
+    $db_name = "Users";
 
     //Connexió dintre de try-catch
-        
+    try {
+        $conn = new mysqli($db_host, $db_user, $db_passwd, $db_name);
+
+        if ($conn->connect_error) {
+            throw new Exception("". $conn->connect_error);
+        }
+    } catch (Exception $e) {
+        echo "". $e->getMessage();
+    }        
 
 ?>

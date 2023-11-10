@@ -12,18 +12,18 @@ Cal completar i/o trobar errors per a que aquest arxiu pugui:
 
 
    // Incluir l'arxiu de conexxió (db_connection.php)
-    
+   include("../db_connection.php");
 
-    if (isset($_POST['signin'])){
+    if (isset($_POST['inici'])){
         $email = $_POST['new_email'];
         $passwd = $_POST['new_password'];
-        
 
         //Consulta la BBDD per buscar usuari segons email i password
-        
+        $sql = "SELECT * FROM usuaris WHERE email = '$email' AND password = '$passwd'";
 
         //Posar comantari
-        $response = ($conn, $sql);
+        $response = mysqli_query($conn, $sql);
+
 
         if(!$response){
             echo "Hi ha un error en la consulta";
@@ -33,11 +33,13 @@ Cal completar i/o trobar errors per a que aquest arxiu pugui:
         }
 
         //Direccionament a la view usuari.php
+        header ("Location: ../views/usuari.php");
+        exit;
         
         
     }else{
-        echo"Hi ha hagut algun error";
-        mysqli_error();
+        echo "Hi ha hagut algun error";
+        mysqli_error($response);
     }
 
     
