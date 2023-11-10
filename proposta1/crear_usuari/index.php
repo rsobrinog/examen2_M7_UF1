@@ -18,36 +18,38 @@ Cal posar comentari significatiu allà on posi "Posar comentari"
 ------------------------------------------------------------------------------------------------
 */
 
-
+//Register.php
 
 // Incluir l'arxiu de conexxió (db_connection.php)
+include('./../db_connection.php');
 
-
-// Posar comentari
-if (set($_POST['send'])){
+// comprovamos que los campos del html no estan vacías
+if (isset($_POST['send'])){
     $id = $_POST['id'];
     $nom = $_POST['name'];
-    $cognom = $_POST['Sname'];
-    $rol_user = $_POST['Ruser'];
-    $pass = $_POST['pass_user'];
-    $email = $_POST['email_user'];
-    $actiu = $_POST['active'];
+    $cognom = $_POST['surname'];
+    $rol_user = $_POST['rol'];
+    $pass = $_POST['password'];
+    $email = $_POST['email'];
+    $active = $_POST['actiu'];
 
+    if ($active = 'true') {
+            echo "es true";
+    }
 
-    //Es crea la consulta per inserir les dades del formulari index.html
+    //Es crea la consulta per inserir les dades del formulari index.html A LA BASE DADES
+    $consulta = "INSERT INTO `user`(`id`, `rol`, `name`, `surname`, `password`, `email`, `active`) VALUES (`$id`,`$rol_user`,`$nom`,`$cognom`,`$pass`,`$email`,`$active`)";
+
     
-
-    
-    //Posar comentari
-    $result = ($conn, $consulta);
+    //resultat de la inserció de dades a la base de dades
+    $result = mysqli_query($connexion, $consulta);
        
     if(!$result){
         die("Query fail!");
     }
 
-
-    header("Location: ");
-    exit;
+    header("Location: ../view/usuari.php");
+    // exit;
 }
 
 ?>

@@ -12,34 +12,47 @@ Cal completar i/o trobar errors per a que aquest arxiu pugui:
 
 
    // Incluir l'arxiu de conexxió (db_connection.php)
-    
+    include("../db_connection.php");
 
     if (isset($_POST['signin'])){
-        $email = $_POST['new_email'];
-        $passwd = $_POST['new_password'];
-        
-
+        $email = $_POST['email'];
+        $passwd = $_POST['password'];
+    echo $email." correo: ".$email;
         //Consulta la BBDD per buscar usuari segons email i password
+        $query = "SELECT `id`, `rol`, `name`, `surname`, `password`, `email`, `active` FROM `user` WHERE `email`='$email' AND `password`='$passwd'";
+
+        //resultat connexio
         
 
-        //Posar comantari
-        $response = ($conn, $sql);
-
-        if(!$response){
-            echo "Hi ha un error en la consulta";
-        }else{
-            echo "consulta correcte";
-            
+        try {
+            $response = mysqli_query($connexion, $query);
+            $data = mysqli_fetch_assoc($response);
+            if(!data) {
+                echo"fffunciona";
+                include("../views/login.html");
+                echo "login incorrecte";                
+            }
+        } catch (Exception $e) {
+            echo "erroe";
         }
-
-        //Direccionament a la view usuari.php
-        
+        // if(!$response){
+        //     echo "Hi ha un error en la consulta";
+        // }else{
+        //     $data = mysqli_fetch_assoc($response);
+        //     if(!data) {
+        //         echo"fffunciona";
+        //         include("../views/login.html");
+        //         echo "login incorrecte";                
+        //     }
+            
+        // }
+echo "consulta correcte";
+        // //Direccionament a la view usuari.php
+        // header("Location: ../views/usuari.php");
         
     }else{
         echo"Hi ha hagut algun error";
         mysqli_error();
-    }
-
-    
+    }    
     
 ?>

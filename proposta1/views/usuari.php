@@ -5,8 +5,9 @@ En aquest arxiu s'hi mostraran TOTES les dades de l'usuari (independentment del 
 ---------------------------------------------------------------------------------------
 */
 
-//incluir userLogin.php
-
+//incluir userLogin.php donde hara primero el procedimiento de ese fichero
+include('../iniciar_sessio/userLogin.php');
+echo "entra usuari.php";
 ?>
 
 <!DOCTYPE html>
@@ -20,12 +21,14 @@ En aquest arxiu s'hi mostraran TOTES les dades de l'usuari (independentment del 
     <h1>INFORMACIÓ USUARI</h1>
     <?php
         //
-        foreach (){
-            echo "ID usuari: ". ;
-            echo "Nom usuari: " . ;
-            echo "Cognom usuari: " . ;
-            echo "Rol usuari: " . ;
+        include('../iniciar_sessio/userLogin.php');
+        if($data) {
+            echo "ID usuari: ".$data['id'] ;
+            echo "Nom usuari: " .$data['name'] ;
+            echo "Cognom usuari: " .$data['surname'] ;
+            echo "Rol usuari: " .$data['rol'] ;
         }
+        mysqli_close($connexion);
     ?>
 </body>
 </html>
