@@ -21,7 +21,7 @@ Cal posar comentari significatiu allà on posi "Posar comentari"
 
 
 // Incluir l'arxiu de conexxió (db_connection.php)
-include('../db_connection.php');
+include('../../db_connection.php');
 
 // Comprovem que l'usuari hagi clicat al botó d'enviar 
 if (isset($_POST['send'])){

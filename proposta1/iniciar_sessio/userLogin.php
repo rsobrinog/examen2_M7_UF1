@@ -12,7 +12,7 @@ Cal completar i/o trobar errors per a que aquest arxiu pugui:
 
 
    // Incluir l'arxiu de conexxió (db_connection.php)
-    include('../db_connection');
+    include('../../db_connection');
 
     if (isset($_POST["send"])){
         $email = $_POST['new_email'];
