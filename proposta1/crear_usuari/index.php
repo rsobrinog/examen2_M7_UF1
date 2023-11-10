@@ -20,34 +20,42 @@ Cal posar comentari significatiu allà on posi "Posar comentari"
 
 
 
-// Incluir l'arxiu de conexxió (db_connection.php)
+    // Incluir l'arxiu de conexxió (db_connection.php)
+    include("../db_connection.php");
 
+    // Si s'ha enviat el formulari, es guarden els valors del formulari en les variables
+    if (isset($_POST['send'])){
+        $id = $_POST['id'];
+        $nom = $_POST['name'];
+        $cognom = $_POST['Sname'];
+        $rol_user = $_POST['Ruser'];
+        $pass = $_POST['pass_user'];
+        $email = $_POST['email_user'];
+        $actiu = $_POST['active'];
 
-// Posar comentari
-if (set($_POST['send'])){
-    $id = $_POST['id'];
-    $nom = $_POST['name'];
-    $cognom = $_POST['Sname'];
-    $rol_user = $_POST['Ruser'];
-    $pass = $_POST['pass_user'];
-    $email = $_POST['email_user'];
-    $actiu = $_POST['active'];
+        // Comprobació de actiu per convertir el valor per que sigui vàlid per la base de dades
+        if ($actiu == "on") {
+            $actiu = 1;
+        } else {
+            $actiu = 0;
+        }
 
+        //Es crea la consulta per inserir les dades del formulari index.html
+        $sql = 'INSERT INTO user (`id`,`name`,`surname`,`rol`,`password`,`email`,`active`) VALUES ("'.$id.'","'.$nom.'","'.$cognom.'","'.$rol_user.'","'.$pass.'","'.$email.'","'.$actiu.'")';
 
-    //Es crea la consulta per inserir les dades del formulari index.html
-    
+        
+        //Variable on es guarda el resultat de la consulta sql
+        $result = mysqli_query($conn, $sql);
+        
+        if(!$result){
+            die("Query fail!");
+        }
 
-    
-    //Posar comentari
-    $result = ($conn, $consulta);
-       
-    if(!$result){
-        die("Query fail!");
+        header("Location: ../views/login.html");
+        exit;
+    } else {
+        echo"Hi ha hagut algun error";
+        mysqli_error($conn);
     }
-
-
-    header("Location: ");
-    exit;
-}
 
 ?>

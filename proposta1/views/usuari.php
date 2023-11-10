@@ -6,7 +6,7 @@ En aquest arxiu s'hi mostraran TOTES les dades de l'usuari (independentment del 
 */
 
 //incluir userLogin.php
-
+include("../iniciar_sessio/userLogin.php");
 ?>
 
 <!DOCTYPE html>
@@ -19,12 +19,22 @@ En aquest arxiu s'hi mostraran TOTES les dades de l'usuari (independentment del 
 <body>
     <h1>INFORMACIÓ USUARI</h1>
     <?php
-        //
-        foreach (){
-            echo "ID usuari: ". ;
-            echo "Nom usuari: " . ;
-            echo "Cognom usuari: " . ;
-            echo "Rol usuari: " . ;
+
+        //Comprobació per si no existeix l'usuari amb les dades introduïdes al login
+        if ($result -> num_rows == 0) {
+            echo "Aquest usuari no existeix";
+        } else {
+
+            // Bucle que mostra la info dels usuaris que hem rebut de la consulta
+            foreach ($dades as $user){
+                echo "ID usuari: ". $user["id"]."<br>";
+                echo "Nom usuari: " . $user["name"]."<br>";
+                echo "Cognom usuari: " . $user["surname"]."<br>";
+                echo "Rol usuari: " . $user["rol"]."<br>";
+                echo "Contrasenya usuari: " . $user["password"]."<br>";
+                echo "Email usuari: " . $user["email"]."<br>";
+                echo "Actiu: " . $user["active"]."<br>";
+            }
         }
     ?>
 </body>

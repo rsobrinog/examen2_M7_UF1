@@ -12,32 +12,32 @@ Cal completar i/o trobar errors per a que aquest arxiu pugui:
 
 
    // Incluir l'arxiu de conexxió (db_connection.php)
-    
+    include("../db_connection.php");
 
     if (isset($_POST['signin'])){
         $email = $_POST['new_email'];
         $passwd = $_POST['new_password'];
-        
 
         //Consulta la BBDD per buscar usuari segons email i password
-        
+        $sql = 'SELECT * FROM user WHERE email = "'.$email.'" AND password = "'.$passwd.'"';
 
-        //Posar comantari
-        $response = ($conn, $sql);
+        //Variable on es guarda el resultat de la consulta sql
+        $result = mysqli_query($conn, $sql);
 
-        if(!$response){
+        if(!$result){
             echo "Hi ha un error en la consulta";
         }else{
             echo "consulta correcte";
-            
+            $dades = $result->fetch_all(MYSQLI_ASSOC);
         }
 
         //Direccionament a la view usuari.php
-        
+        //He decidit fer el direccionament a usuari.php en el formulari de login, ja que usuari.php
+        //fa el include a userLogin i rep el resultat de la consulta en el include.
         
     }else{
         echo"Hi ha hagut algun error";
-        mysqli_error();
+        mysqli_error($conn);
     }
 
     
