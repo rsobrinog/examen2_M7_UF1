@@ -10,7 +10,6 @@ formulari (views/index.html).
 4. Enviar missatge d'error si la query és incorrecta.
 5. Redirigir a usuari.php
 
-
 Cal completar codi i/o trobar errors del codi següent.
 Sota dels comentaris (//comentari) cal posar codi.
 Cal posar comentari significatiu allà on posi "Posar comentari"
@@ -18,36 +17,33 @@ Cal posar comentari significatiu allà on posi "Posar comentari"
 ------------------------------------------------------------------------------------------------
 */
 
-
-
 // Incluir l'arxiu de conexxió (db_connection.php)
-
+include("db_connection.php");
 
 // Posar comentari
-if (set($_POST['send'])){
-    $id = $_POST['id'];
+if (isset($_POST['send'])) {
     $nom = $_POST['name'];
-    $cognom = $_POST['Sname'];
-    $rol_user = $_POST['Ruser'];
-    $pass = $_POST['pass_user'];
-    $email = $_POST['email_user'];
-    $actiu = $_POST['active'];
+    $cognom = $_POST['surname'];
+    $rol = $_POST['rol'];
+    $pass = $_POST['password'];
+    $email = $_POST['email'];
+    $status = isset($_POST['status']) ? 1 : 0;
 
+    echo  `$nom, $cognom, $rol, $pass, $email, $status`;
 
-    //Es crea la consulta per inserir les dades del formulari index.html
+    // Es crea la consulta per inserir les dades del formulari index.html
+    $consulta = "INSERT INTO users (rol, name, surname, password, email, active) 
+                 VALUES ('$rol', '$nom', '$cognom', '$pass', '$email', '$status')";
     
-
+    // Posar comentari
+    // resultat de la query
+    $result = mysqli_query($conn, $consulta);
     
-    //Posar comentari
-    $result = ($conn, $consulta);
-       
-    if(!$result){
-        die("Query fail!");
+    // en cas de retornar error
+    if (!$result) {
+        die("Query fail: " . mysqli_error($conn)); // Enviar missatge d'error amb informació detallada
     }
 
-
-    header("Location: ");
+    header("Location: views/usuari.php"); // Posar la ruta correcta si és diferent
     exit;
 }
-
-?>
