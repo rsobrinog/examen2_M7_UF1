@@ -12,7 +12,7 @@ Cal completar i/o trobar errors per a que aquest arxiu pugui:
 
 
    // Incluir l'arxiu de conexxió (db_connection.php)
-    
+   include_once('../db_connection.php');
 
     if (isset($_POST['signin'])){
         $email = $_POST['new_email'];
@@ -20,7 +20,7 @@ Cal completar i/o trobar errors per a que aquest arxiu pugui:
         
 
         //Consulta la BBDD per buscar usuari segons email i password
-        
+        $sql = "SELECT * FROM user";
 
         //Posar comantari
         $response = ($conn, $sql);
@@ -33,7 +33,7 @@ Cal completar i/o trobar errors per a que aquest arxiu pugui:
         }
 
         //Direccionament a la view usuari.php
-        
+        header("Location: ../views/usuari.php");
         
     }else{
         echo"Hi ha hagut algun error";

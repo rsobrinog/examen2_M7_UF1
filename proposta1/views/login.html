@@ -6,13 +6,13 @@
     <title>PRÀCTICA 4 - LOGIN</title>
 </head>    
 </body>
-    <!--  POSAR COMENTARI GENERAL -->
+    <!--  PÀGINA D'INICI DE SESSIÓ -->
     <div>
         <h1>Iniciar sessió de l'usuari</h1>    
     </div>
     <div class="dropdown-menu">
         <!-- Mirar a quin arxiu va aquest formulari i afegir-ho -->
-        <form class="px-4 py-3">
+        <form class="px-4 py-3" method="GET" action="userLogin.php">
             <div class="form-group">
                 <label for="exampleDropdownFormEmail1" >Email address</label>
                 <input type="email" class="form-control" placeholder="email@example.com" required>
@@ -30,7 +30,7 @@
             <button type="submit" class="btn btn-primary" name="signin">Sign in</button>
             <div>
             <!-- POSAR ENLLAÇ a la view index.php-->
-            <a >Crear usuari</a> 
+            <a href="index.html">Crear usuari</a> 
             </div>
         </form>
     </div>
