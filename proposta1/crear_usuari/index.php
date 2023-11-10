@@ -22,7 +22,7 @@ Cal posar comentari significatiu allà on posi "Posar comentari"
 include("../db_connection.php");//conexion con el archivo db_connection que conecta con la base de datos
 
 // Posar comentari
-if (issset($_POST['send'])){
+if (isset($_POST['send'])){
     $id = $_POST['id'];
     $rol = $_POST['rol'];
     $name = $_POST['name'];
