@@ -21,11 +21,11 @@ Cal posar comentari significatiu allà on posi "Posar comentari"
 
 
 // Incluir l'arxiu de conexxió (db_connection.php)
+include("../db_connection.php");
 
-
-// Posar comentari
-if (set($_POST['send'])){
-    $id = $_POST['id'];
+//Posar els noms als de post
+if (isset($_POST['send'])){
+    //$id = $_POST['id'];
     $nom = $_POST['name'];
     $cognom = $_POST['Sname'];
     $rol_user = $_POST['Ruser'];
@@ -35,18 +35,21 @@ if (set($_POST['send'])){
 
 
     //Es crea la consulta per inserir les dades del formulari index.html
-    
+    //El id es autoincrement
 
+    $consulta = "INSERT INTO user (rol, name, surname, password, email, active) 
+    VALUES ('$rol_user', '$nom', '$cognom', '$pass', '$email', $actiu)";
     
-    //Posar comentari
-    $result = ($conn, $consulta);
+    //Verificar si és crea la BBDD
+    $result = mysqli_query($conn, $consulta);
+    //$conn->query($consulta);
        
     if(!$result){
         die("Query fail!");
     }
 
 
-    header("Location: ");
+    header("Location: ../views/login.html");
     exit;
 }
 

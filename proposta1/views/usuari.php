@@ -6,7 +6,7 @@ En aquest arxiu s'hi mostraran TOTES les dades de l'usuari (independentment del 
 */
 
 //incluir userLogin.php
-
+include("../iniciar_sessio/userLogin.php");
 ?>
 
 <!DOCTYPE html>
@@ -19,12 +19,12 @@ En aquest arxiu s'hi mostraran TOTES les dades de l'usuari (independentment del 
 <body>
     <h1>INFORMACIÓ USUARI</h1>
     <?php
-        //
-        foreach (){
-            echo "ID usuari: ". ;
-            echo "Nom usuari: " . ;
-            echo "Cognom usuari: " . ;
-            echo "Rol usuari: " . ;
+        //Buscar des de la BBDD la informació del usuari
+        foreach ($response as $user){
+            echo "ID usuari: ". $user['id'];
+            echo "Nom usuari: " . $user['name'];
+            echo "Cognom usuari: " . $user['surname'];
+            echo "Rol usuari: " . $user['rol'];
         }
     ?>
 </body>
