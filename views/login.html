@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PRÀCTICA 4 - LOGIN</title>
+</head>    
+</body>
+    <!--  Arxiu per que el usuari inicii sessio -->
+    <div>
+        <h1>Iniciar sessió de l'usuari</h1>    
+    </div>
+    <div class="dropdown-menu">
+        <!-- Mirar a quin arxiu va aquest formulari i afegir-ho -->
+        <form class="px-4 py-3" action="../iniciar_sessio/userLogin.php" method="POST">
+            <div class="form-group">
+                <label for="exampleDropdownFormEmail1" >Email address</label>
+                <input type="email" class="form-control" placeholder="email@example.com" id ="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="exampleDropdownFormPassword1" >Password</label>
+                <input type="text" class="form-control" placeholder="Password" name="password" required>
+            </div>
+            <div class="form-check">
+                <input type="checkbox" class="form-check-input" id="dropdownCheck">
+                <label class="form-check-label" for="dropdownCheck">
+                Remember me
+                </label>
+            </div>
+            <button type="submit" class="btn btn-primary" name="signin">Sign in</button>
+            <div>
+            <!-- POSAR ENLLAÇ a la view index.html-->
+            <a href="index.html">Crear usuari</a> 
+            </div>
+        </form>
+    </div>
+</body>
+</html>
