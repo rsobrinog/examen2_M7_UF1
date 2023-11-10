@@ -6,50 +6,50 @@
     <title>PRÀCTICA 3 - FORM EN PHP CON PHPMYADMIN</title>
 </head>
 <body>
-    <!-- POSAR COMENTARI GENERAL -->
+    <!-- Formulario de registro -->
     <div>
         <h1>Creació d'usuari nou</h1>
     </div>
     <!-- Mirar a quin arxiu va aquest formulari i afegir-ho -->
-    <form >
+    <form method="POST" action="../crear_usuari/index.php">
         <div>
-            <label>ID</label>
-            <input type="text">
+            <label for="id">ID</label>
+            <input type="text" name="id">
         </div>
         <div>
-            <label>NAME</label>
-            <input type="text">
+            <label for="name">NAME</label>
+            <input type="text" name="name">
         </div>
         <div>
-            <label>SURNAME</label>
-            <input type="text" >
+            <label for="surname">SURNAME</label>
+            <input type="text" name="surname" >
         </div>
         <div>
             <label>
-                <select >
-                    <option value="Professorat">Professorat</option>
-                    <option value="Alumnat">Alumnat</option>
+                <select name="rol" type="select">
+                    <option value="teacher">Professorat</option>
+                    <option value="student">Alumnat</option>
                 </select>
             </label>
         </div>
         <div>
             <label>Password</label>
-            <input type="text" >
+            <input type="password" name="password">
         </div>
         <div>
             <label>email</label>
-            <input type="text" >
+            <input type="text" name="email">
         </div>
         <div>
             <label for="active">Active</label>
-            <input type="checkbox" >
+            <input type="checkbox" name="active" value="true">
         </div>
         <div>
-            <button type="submit" >SEND</button>
+            <button type="submit" name="submit">SEND</button>
         </div>
         <div>
-            <!-- POSAR ENLLAÇ a la view index.php-->
-            <a >Inici sessió usuari</a>
+            <!-- POSAR ENLLAÇ a la view login.html-->
+            <a href="./login.html">Inici sessió usuari</a>
         </div>
     </form>    
 </body>

@@ -6,6 +6,9 @@ En aquest arxiu s'hi mostraran TOTES les dades de l'usuari (independentment del 
 */
 
 //incluir userLogin.php
+include("../iniciar_sessio/userLogin.php");
+$dataUser[]= unserialize(urldecode($_GET['dataUser'])) ;
+
 
 ?>
 
@@ -20,12 +23,13 @@ En aquest arxiu s'hi mostraran TOTES les dades de l'usuari (independentment del 
     <h1>INFORMACIÓ USUARI</h1>
     <?php
         //
-        foreach (){
-            echo "ID usuari: ". ;
-            echo "Nom usuari: " . ;
-            echo "Cognom usuari: " . ;
-            echo "Rol usuari: " . ;
+        foreach ( $dataUser as $user){
+            echo "ID usuari: ". $user["id"]."\n <br>";
+            echo "Nom usuari: " . $user["name"]."\n <br>";
+            echo "Cognom usuari: " . $user["surname"]."\n <br>";
+            echo "Rol usuari: " . $user["rol"]."\n <br>";
         }
     ?>
+    <a href=""></a>
 </body>
 </html>
