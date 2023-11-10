@@ -1,55 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PRÀCTICA 3 - FORM EN PHP CON PHPMYADMIN</title>
-</head>
-<body>
-    <!-- POSAR COMENTARI GENERAL -->
-    <div>
-        <h1>Creació d'usuari nou</h1>
-    </div>
-    <!-- Mirar a quin arxiu va aquest formulari i afegir-ho -->
-    <form >
-        <div>
-            <label>ID</label>
-            <input type="text">
-        </div>
-        <div>
-            <label>NAME</label>
-            <input type="text">
-        </div>
-        <div>
-            <label>SURNAME</label>
-            <input type="text" >
-        </div>
-        <div>
-            <label>
-                <select >
-                    <option value="Professorat">Professorat</option>
-                    <option value="Alumnat">Alumnat</option>
-                </select>
-            </label>
-        </div>
-        <div>
-            <label>Password</label>
-            <input type="text" >
-        </div>
-        <div>
-            <label>email</label>
-            <input type="text" >
-        </div>
-        <div>
-            <label for="active">Active</label>
-            <input type="checkbox" >
-        </div>
-        <div>
-            <button type="submit" >SEND</button>
-        </div>
-        <div>
-            <!-- POSAR ENLLAÇ a la view index.php-->
-            <a >Inici sessió usuari</a>
-        </div>
-    </form>    
-</body>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>PRÀCTICA 3 - FORM EN PHP CON PHPMYADMIN</title>
+	</head>
+	<body>
+		<!-- POSAR COMENTARI GENERAL -->
+		<div>
+			<h1>Creació d'usuari nou</h1>
+		</div>
+		<!-- Mirar a quin arxiu va aquest formulari i afegir-ho -->
+		<form action="/../crear_usuari/index.php" method="post">
+			<div>
+				<label>NAME</label>
+				<input type="text" name="name" />
+			</div>
+			<div>
+				<label>SURNAME</label>
+				<input type="text" name="Sname" />
+			</div>
+			<div>
+				<label>
+					<select name="Ruser">
+						<option value="Professorat">Professorat</option>
+						<option value="Alumnat">Alumnat</option>
+					</select>
+				</label>
+			</div>
+			<div>
+				<label>Password</label>
+				<input type="password" name="pass_user" />
+			</div>
+			<div>
+				<label>email</label>
+				<input type="email" name="email_user" />
+			</div>
+			<div>
+				<label for="active">Active</label>
+				<input type="checkbox" name="active" />
+			</div>
+			<div>
+				<button type="submit" name="send">SEND</button>
+			</div>
+			<div>
+				<!-- POSAR ENLLAÇ a la view login.html-->
+				<a href="login.html">Inici sessió usuari</a>
+			</div>
+		</form>
+	</body>
+</html>
