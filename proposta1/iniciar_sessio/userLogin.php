@@ -14,7 +14,7 @@ Cal completar i/o trobar errors per a que aquest arxiu pugui:
    // Incluir l'arxiu de conexxió (db_connection.php)
    include("../db_connection.php");
 
-    if (isset($_POST['inici'])){
+    if (isset($_POST['signin'])){
         $email = $_POST['new_email'];
         $passwd = $_POST['new_password'];
 
