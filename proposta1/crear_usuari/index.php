@@ -35,11 +35,13 @@ if (isset($_POST['send'])){
 
     if ($active = 'true') {
             echo "es true";
+            $active = true;
+    } else {
+        $active = false;
     }
 
     //Es crea la consulta per inserir les dades del formulari index.html A LA BASE DADES
     $consulta = "INSERT INTO `user`(`id`, `rol`, `name`, `surname`, `password`, `email`, `active`) VALUES (`$id`,`$rol_user`,`$nom`,`$cognom`,`$pass`,`$email`,`$active`)";
-
     
     //resultat de la inserció de dades a la base de dades
     $result = mysqli_query($connexion, $consulta);
@@ -48,7 +50,7 @@ if (isset($_POST['send'])){
         die("Query fail!");
     }
 
-    header("Location: ../view/usuari.php");
+    header("Location: ../view/login.html");
     // exit;
 }
 
