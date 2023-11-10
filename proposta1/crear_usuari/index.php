@@ -18,36 +18,58 @@ Cal posar comentari significatiu allà on posi "Posar comentari"
 ------------------------------------------------------------------------------------------------
 */
 
-
-
 // Incluir l'arxiu de conexxió (db_connection.php)
-
+include("../db_connection.php");//conexion con el archivo db_connection que conecta con la base de datos
 
 // Posar comentari
-if (set($_POST['send'])){
+if (issset($_POST['send'])){
     $id = $_POST['id'];
-    $nom = $_POST['name'];
-    $cognom = $_POST['Sname'];
-    $rol_user = $_POST['Ruser'];
-    $pass = $_POST['pass_user'];
-    $email = $_POST['email_user'];
+    $rol = $_POST['rol'];
+    $name = $_POST['name'];
+    $surname = $_POST['surname'];
+    $password = $_POST['password'];
+    $email = $_POST['email'];//coregir por email
     $actiu = $_POST['active'];
 
 
     //Es crea la consulta per inserir les dades del formulari index.html
-    
-
-    
+    $insert="INSERT INTO `users`(`id`, `rol`, `name`, `surname`, `email`, `password`, `active`) VALUES ('$id','$rol','$name','$surname','$email','$password','$active')";
+  
     //Posar comentari
-    $result = ($conn, $consulta);
+    $result =mysqli_query($conn, $insert);
        
     if(!$result){
         die("Query fail!");
+    }else{
+       
+       echo "Error en la inserción: " . $mysqli->error;
     }
 
-
-    header("Location: ");
+    header("Location: usuari.php ");
     exit;
 }
 
 ?>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
