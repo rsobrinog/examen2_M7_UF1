@@ -19,6 +19,7 @@
     $db_name = "Users";
 
     //Connexió dintre de try-catch
+    //ERROR: No està creat l'event del catch en cas de falla a la connexió
     try {
         $conn = mysqli_connect($db_host, $db_user, $db_passwd, $db_name);
     } catch (){
