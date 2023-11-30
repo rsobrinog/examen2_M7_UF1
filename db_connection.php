@@ -21,6 +21,8 @@
     //Connexió dintre de try-catch
     try {
         $conn = mysqli_connect($db_host, $db_user,$db_passwd,$db_name);
+        //ERROR: si fas servir una connexió procedimental, Exception és per a objectes (PDO o new mysqli)
+        //suberror: el try-catch ja és per agafar errors de connexió, el if no és necessari. Ho estas comprovant dues vegades.
         if(!$conn) {
             die("Error, no s-ha pogut connectar");
         }

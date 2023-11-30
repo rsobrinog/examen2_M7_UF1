@@ -33,7 +33,7 @@ if (isset($_POST['surname'])){
     $rol = $_POST['rol'];
     $pass = $_POST['password'];
     $email = $_POST['email'];
-    $actiu = $_POST['active'];
+    $actiu = $_POST['active']; //ERROR: cal mirar el tipus de active del formulari i veure si és el mateix tipus que el de la BBDD
 
 
     //Es crea la consulta per inserir les dades del formulari index.html
