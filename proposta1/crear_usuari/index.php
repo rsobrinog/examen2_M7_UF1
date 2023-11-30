@@ -18,9 +18,11 @@ Cal posar comentari significatiu allà on posi "Posar comentari"
 */
 
 // Incluir l'arxiu de conexxió (db_connection.php)
+//ERROR: no troba l'arxiu. Aquest path és si està en el mateix directori
 include("db_connection.php");
 
 // Posar comentari
+//ERROR: Falta comentari
 if (isset($_POST['send'])) {
     $nom = $_POST['name'];
     $cognom = $_POST['surname'];
@@ -36,7 +38,8 @@ if (isset($_POST['send'])) {
                  VALUES ('$rol', '$nom', '$cognom', '$pass', '$email', '$status')";
     
     // Posar comentari
-    // resultat de la query
+    // resultat de la query 
+    //ERROR si fas una connexió no procedimental, la consulta ha de ser no procedimental (mysqli->query)
     $result = mysqli_query($conn, $consulta);
     
     // en cas de retornar error

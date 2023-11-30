@@ -23,4 +23,5 @@ Si executa correctament, sobre una nota de 100 es resta:
 error => deixar de fer una tasca que es demana que faci (codi, comentaris, ...).
 
 
+ Errors totals => 7
  

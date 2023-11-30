@@ -24,6 +24,7 @@ try {
     $conn = new mysqli($db_host, $db_user, $db_passwd, $db_name);
 
     // Verificar si la connexió ha sigut exitosa
+    //ERROR: try-catch serveix per detectar tots els errors de connexió. Aquest If és incorrecte. Si vols algun missatge en concret, el poses dintre del catch.
     if ($conn->connect_error) {
         throw new Exception("Connexió a la base de dades fallida: " . $conn->connect_error);
     }

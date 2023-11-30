@@ -12,6 +12,7 @@ Cal completar i/o trobar errors per a que aquest arxiu pugui:
 
 
 // Incluir l'arxiu de conexxió (db_connection.php)
+//ERROR: no troba l'arxiu. Aquest path és si està en el mateix directori
 include("db_connection.php");
 
 if (isset($_POST['signin'])) {
@@ -22,6 +23,8 @@ if (isset($_POST['signin'])) {
     $sql = "SELECT * FROM users WHERE email='$email' AND password='$passwd'";
 
     //Posar comentari
+    //ERROR: Falta comentari
+    //ERROR si fas una connexió no procedimental, la consulta ha de ser no procedimental (mysqli->query)
     $response = mysqli_query($conn, $sql);
 
     if (!$response) {
