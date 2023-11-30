@@ -21,6 +21,7 @@
     //Connexió dintre de try-catch
     try {
         $connexion = mysqli_connect($db_host, $db_user, $db_passwd, $db_name);
+        //ERROR: La connexió és procedimental i, Exception s'utilitza per connexions d'objectes (PDO o new mysqli)
     } catch (Exception $e) {
         die("Query connection fail");
     }

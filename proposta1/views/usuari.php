@@ -22,6 +22,7 @@ echo "entra usuari.php";
     <?php
         //
         include('../iniciar_sessio/userLogin.php');
+        //ERROR: les dades d'una BBDD s'extreuen amb foreach. Si tens més d'un registre, com ho tens ara no es veurien tots esl registres.
         if($data) {
             echo "ID usuari: ".$data['id'] ;
             echo "Nom usuari: " .$data['name'] ;

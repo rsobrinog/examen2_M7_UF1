@@ -32,6 +32,7 @@ Cal completar i/o trobar errors per a que aquest arxiu pugui:
                 include("../views/login.html");
                 echo "login incorrecte";                
             }
+            //ERROR: mateix error que a db_connection
         } catch (Exception $e) {
             echo "erroe";
         }
