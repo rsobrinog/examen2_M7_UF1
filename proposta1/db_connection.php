@@ -21,6 +21,7 @@
     //Connexió dintre de try-catch
     try {
         $conn = mysqli_connect($db_host,$db_user,$db_passwd,$db_name);
+        //ERROR: la manera de detectar errors en una connexió procedimental és amb mysqli_sql_exception. Throwable s'utilitza per connexión d'objectes (PDO o new mysqli)
     } catch (\Throwable $th) {
         //throw $th;
         echo mysqli_connect_errno() . "-->" . mysqli_connect_error();

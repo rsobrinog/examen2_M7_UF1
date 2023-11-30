@@ -21,6 +21,7 @@ include("../iniciar_sessio/userLogin.php");
     <?php
         //
         var_dump($response);
+        //ERROR: falten més camps a mostrar
         foreach ($response as $user){
             echo "ID usuari: ". $user["id"];
             echo "Nom usuari: " . $user["name"];

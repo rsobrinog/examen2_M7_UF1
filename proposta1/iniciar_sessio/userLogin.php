@@ -20,9 +20,11 @@ Cal completar i/o trobar errors per a que aquest arxiu pugui:
         
 
         //Consulta la BBDD per buscar usuari segons email i password
+        //ERROR: et falta buscar a usuari per password també.
         $sql = "SELECT * FROM user WHERE email LIKE '$email'";
 
         //Posar comantari
+        //ERROR: Falta comentari
         $response = mysqli_query($conn, $sql);
 
         if(!$response){

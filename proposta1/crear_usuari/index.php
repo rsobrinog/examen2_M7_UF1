@@ -24,13 +24,14 @@ Cal posar comentari significatiu allà on posi "Posar comentari"
 include("../db_connection.php");
 
 // Posar comentari
+//ERROR: Falra comentari
 if (isset($_POST['send'])){
     $nom = $_POST['name'];
     $cognom = $_POST['Sname'];
     $rol_user = $_POST['Ruser'];
     $pass = $_POST['pass_user'];
     $email = $_POST['email_user'];
-    $actiu = $_POST['active'];
+    $actiu = $_POST['active']; //ERROR: s'ha d'adaptar el tipus que ve del formulari de active amb el tipus que accepta la BBDD
 
 
     //Es crea la consulta per inserir les dades del formulari index.html
@@ -38,6 +39,7 @@ if (isset($_POST['send'])){
 
     
     //Posar comentari
+    //ERROR: Falta comentari
     $result = mysqli_query($conn, $consulta);
        
     if(!$result){
