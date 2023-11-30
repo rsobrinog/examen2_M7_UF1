@@ -23,6 +23,7 @@ Cal completar i/o trobar errors per a que aquest arxiu pugui:
         $sql = "SELECT * FROM user";
 
         //Posar comantari
+        //ERROR: Falta la connexió
         $response = ($conn, $sql);
 
         if(!$response){

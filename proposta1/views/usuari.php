@@ -20,7 +20,7 @@ include_once('../iniciar_sessio/userLogin.php');
 <body>
     <h1>INFORMACIÓ USUARI</h1>
     <?php
-        //
+        //ERROR: Falta afegir l'objecte amb les dades que ve de userLogin.php
         foreach (){
             echo "ID usuari: ". $id;
             echo "Nom usuari: " . $nom;

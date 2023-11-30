@@ -24,6 +24,7 @@ Cal posar comentari significatiu allà on posi "Posar comentari"
 include_once('../db_connection.php');
 
 // Posar comentari
+//ERROR: S'ha de modificar set per isset
 if (set($_POST['send'])){
     $id = $_POST['id'];
     $nom = $_POST['name'];
@@ -31,7 +32,7 @@ if (set($_POST['send'])){
     $rol_user = $_POST['Ruser'];
     $pass = $_POST['pass_user'];
     $email = $_POST['email_user'];
-    $actiu = $_POST['active'];
+    $actiu = $_POST['active'];//ERROR: S'ha d'adaptar el tipus que ve dle formulari pel tipus que accepta la BBDD a phpmyadmin
 
 
     //Es crea la consulta per inserir les dades del formulari index.html
@@ -39,6 +40,7 @@ if (set($_POST['send'])){
 
     
     //Posar comentari
+    //ERROR: Falta fer la connexió
     $result = ($conn, $consulta);
        
     if(!$result){
