@@ -22,7 +22,7 @@
 
     try {
         $conection = mysqli_connect($db_host, $db_user, $db_passwd, $db_name);
-        
+        //ERROR: si fas la connexió procedimental, l'error ha de ser procedimental. Excpetion és error per PDO o new mysqly
     } catch (Exception $e) {
         echo"". $e->getMessage() ."";
     }

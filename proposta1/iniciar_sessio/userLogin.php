@@ -39,7 +39,7 @@ Cal completar i/o trobar errors per a que aquest arxiu pugui:
         
         
     }else{
-        
+        //ERROR: Falta missatge d'error
     }
 
     

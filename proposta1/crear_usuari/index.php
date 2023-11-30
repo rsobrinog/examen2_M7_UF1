@@ -25,6 +25,7 @@ include("../db_connection.php");
 
 
 // Posar comentari
+//ERROR: Falta comentari
 if (isset($_POST['submit'])){
     $id = $_POST['id'];
     $name = $_POST['name'];
@@ -41,6 +42,7 @@ if (isset($_POST['submit'])){
     VALUES ('$id','$rol','$name','$surname','$password','$email','$active')";
     
     //Posar comentari
+    //ERROR: falta comentari
     $result = mysqli_query($conection, $consulta);
     
        
