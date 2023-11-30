@@ -21,6 +21,7 @@
     //Connexió dintre de try-catch
     try {
         $conn = mysqli_connect($db_host, $db_user, $db_passwd, $db_name);
+        //ERROR: la connexió és procedimental, per tant, la detecció d'errors ha de ser procedimental i no és així. Exception correspon a detecció d'errors en objectes
     } catch (Exception $e) {
         echo ("Error de connexió". $e->getMessage());
     }
