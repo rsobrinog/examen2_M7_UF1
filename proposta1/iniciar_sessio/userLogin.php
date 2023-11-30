@@ -23,6 +23,7 @@ Cal completar i/o trobar errors per a que aquest arxiu pugui:
         
         $sql = "SELECT * FROM `user` WHERE `email`='$email' AND `password`='$passwd'";
         //Que mirem si la consulta està correctament feta o n'hi ha error
+        //ERROR: si fas la connexió en objecte (new mysqli) cal que la connexió segueixi el mateix patró, però has utilitzat el procedimental
         $response = mysqli_query($conn, $sql);
 
         if(!$response){

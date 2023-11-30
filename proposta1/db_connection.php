@@ -22,6 +22,7 @@
     try{
         $conn = new mysqli($db_host, $db_user, $db_passwd, $db_name);
         //Si hay un error
+        //ERROR: El try-catch ya es para detectar errores en la conexión a la bbdd. No és correcto el if dentro del try si ya tienes el catch.
         if ($conn->connect_error) {
             throw new Exception("Error de conexión a la base de datos: " . $conn->connect_error);
         }

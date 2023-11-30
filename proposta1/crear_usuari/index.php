@@ -41,6 +41,8 @@ if (isset($_POST['send'])){
     VALUES ('$rol_user', '$nom', '$cognom', '$pass', '$email', $actiu)";
     
     //Verificar si és crea la BBDD
+    //ERROR: si fas la connexió en objecte (new mysqli) cal que la connexió segueixi el mateix patró, però has utilitzat el procedimental.
+    //La connexió que tens com comentari seria la correcta.
     $result = mysqli_query($conn, $consulta);
     //$conn->query($consulta);
        
