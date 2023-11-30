@@ -12,34 +12,29 @@ Cal completar i/o trobar errors per a que aquest arxiu pugui:
 
 
    // Incluir l'arxiu de conexxió (db_connection.php)
-    
+    include("db_connection.php");
 
     if (isset($_POST['signin'])){
-        $email = $_POST['new_email'];
-        $passwd = $_POST['new_password'];
+        $email = $_POST['email'];
+        $passwd = $_POST['password'];
         
 
         //Consulta la BBDD per buscar usuari segons email i password
-        
+        $sql = "SELECT * FROM `users` WHERE `correu`='$email'";
 
-        //Posar comantari
-        $response = ($conn, $sql);
+        //se conecta a la base de datos y realiza la consulta
+        $response = mysqli_query($conn, $sql);
 
         if(!$response){
             echo "Hi ha un error en la consulta";
         }else{
             echo "consulta correcte";
-            
         }
 
         //Direccionament a la view usuari.php
-        
+        header('Location: usuari.php');
         
     }else{
         echo"Hi ha hagut algun error";
-        mysqli_error();
     }
-
-    
-    
 ?>

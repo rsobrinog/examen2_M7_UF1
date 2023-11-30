@@ -11,21 +11,23 @@
         <h1>Creació d'usuari nou</h1>
     </div>
     <!-- Mirar a quin arxiu va aquest formulari i afegir-ho -->
-    <form >
+    <form action="index.php" method="post">
+        <!-- el camp id és autoincremental en la meva bbdd
         <div>
             <label>ID</label>
             <input type="text">
         </div>
+        -->
         <div>
-            <label>NAME</label>
-            <input type="text">
+            <label for="name">NAME</label>
+            <input type="text" name="name">
         </div>
         <div>
-            <label>SURNAME</label>
-            <input type="text" >
+            <label for="surname">SURNAME</label>
+            <input type="text" name="Sname">
         </div>
         <div>
-            <label>
+            <label for="Ruser">
                 <select >
                     <option value="Professorat">Professorat</option>
                     <option value="Alumnat">Alumnat</option>
@@ -33,23 +35,24 @@
             </label>
         </div>
         <div>
-            <label>Password</label>
-            <input type="text" >
+            <label for="password">Password</label>
+            <input type="password" name="pass_user">
         </div>
         <div>
-            <label>email</label>
-            <input type="text" >
+            <label for="email">email</label>
+            <input type="email" name="email_user">
         </div>
         <div>
             <label for="active">Active</label>
-            <input type="checkbox" >
+            <input type="checkbox" name="active">
         </div>
         <div>
-            <button type="submit" >SEND</button>
+            <button type="submit" name="send">SEND</button>
         </div>
         <div>
             <!-- POSAR ENLLAÇ a la view index.php-->
-            <a >Inici sessió usuari</a>
+            <a href="login.html">Inici sessió usuari</a>
         </div>
     </form>    
 </body>
+</html>
