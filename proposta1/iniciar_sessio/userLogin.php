@@ -19,6 +19,7 @@ Cal completar i/o trobar errors per a que aquest arxiu pugui:
         $sql = "SELECT * FROM `user` WHERE email = '$email' and password = '$passwd'";
 
         //Posar comantari
+        //ERROR: Falta comentari
         $response = mysqli_query($conn, $sql);
 
         if(!$response){

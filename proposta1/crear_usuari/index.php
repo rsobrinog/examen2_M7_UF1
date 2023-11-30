@@ -51,7 +51,7 @@ if (isset($_POST['send'])){
         die("Query fail!");
     }
 
-
+    //ERROR: error d'execució. No esta ben utilitzat header
     header("Location: ../views/usuari.php?signin=$_POST['send']&email=$email&passwd=$pass");
     exit;
 }
