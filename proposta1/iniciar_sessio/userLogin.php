@@ -25,6 +25,8 @@ Cal completar i/o trobar errors per a que aquest arxiu pugui:
         //$consulta="SELECT * FROM users";//consulta todos los datos         
 
         //Posar comantari
+        //ERROR: Falta comentari
+        //ERROR: Al fer la connexió amb new mysqli, aquesta trucada mysqli_connect és incorrecte ja que es procedimental. hauria de ser la respectiva a objectes
         $response =mysqli_query($conn, $consultaCredenciales);//modificado 
 
         if(!$response){

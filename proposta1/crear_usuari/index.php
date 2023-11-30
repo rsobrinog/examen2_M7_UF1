@@ -29,13 +29,15 @@ if (isset($_POST['send'])){
     $surname = $_POST['surname'];
     $password = $_POST['password'];
     $email = $_POST['email'];//coregir por email
-    $actiu = $_POST['active'];
+    $actiu = $_POST['active'];//ERROR: active s'havia de mirar el tipus de dada que ens ve del formulari ja que no és la mateixa que la que es demana a la BBDD.
 
 
     //Es crea la consulta per inserir les dades del formulari index.html
     $insert="INSERT INTO `users`(`id`, `rol`, `name`, `surname`, `email`, `password`, `active`) VALUES ('$id','$rol','$name','$surname','$email','$password','$active')";
   
     //Posar comentari
+    //ERROR: Falta comentari
+    //ERROR: Al fer la connexió amb new mysqli, aquesta trucada mysqli_connect és incorrecte ja que es procedimental. hauria de ser la respectiva a objectes
     $result =mysqli_query($conn, $insert);
        
     if(!$result){

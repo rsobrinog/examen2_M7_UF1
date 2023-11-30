@@ -21,7 +21,7 @@
     //Connexió dintre de try-catch
     try{
         $conn=new mysqli($db_host, $db_user, $db_passwd, $db_name);
-        
+        //ERROR: es Exception i no Exeption.
     }catch (Exeption $e){
         echo "error de conexion";
     }
