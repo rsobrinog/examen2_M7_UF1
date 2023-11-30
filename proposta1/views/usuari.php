@@ -22,6 +22,8 @@ include('../iniciar_sessio/userLogin.php');
 <body>
     <h1>INFORMACIÓ USUARI</h1>
     <?php
+    //Error: de userLogin et be un objecte dintre de $response, i aqui agafes $user.
+    //Error: cal un foreach per extreure tots els registres de la bbdd
     echo "ID usuari: " . $user['id'] . "<br>";
     echo "Nom usuari: " . $user['name'] . "<br>";
     echo "Cognom usuari: " . $user['surname'] . "<br>";
