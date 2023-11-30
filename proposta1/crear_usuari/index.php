@@ -52,6 +52,7 @@ if (isset($_POST['send'])){
     
     //Posar comentari
     // Esto realiza la consulta para insertar los datos en la base de datos y se guarda en la variable $result
+    //ERROR: Aquesta consulta és procedimental quan a la connexió a db_connection es fa servir una connexió d'objectes.
     $result = mysqli_query($conn, $consulta);
 
        

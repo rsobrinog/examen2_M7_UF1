@@ -21,7 +21,7 @@
     //Connexió dintre de try-catch
     try {
         $conn = new mysqli($db_host, $db_user, $db_passwd, $db_name);
-
+        //ERROR: Amb try-catch ja es detecten els errors de connexió, per tant, el if per detectar error de connexió no és vàlid
         if ($conn->connect_error) {
             throw new Exception("". $conn->connect_error);
         }

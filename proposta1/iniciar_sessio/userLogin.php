@@ -22,6 +22,8 @@ Cal completar i/o trobar errors per a que aquest arxiu pugui:
         $sql = "SELECT * FROM usuaris WHERE email = '$email' AND password = '$passwd'";
 
         //Posar comantari
+        //ERROR: Falta comentari
+        //ERROR: Aquesta consulta és procedimental quan a la connexió a db_connection es fa servir una connexió d'objectes.
         $response = mysqli_query($conn, $sql);
 
 
