@@ -32,7 +32,7 @@ if (isset($_POST['send'])){
     $rol_user = $_POST['Ruser'];
     $pass = $_POST['pass_user'];
     $email = $_POST['email_user'];
-    $actiu = $_POST['active'];
+    $actiu = $_POST['active']; //ERROR: cal veure el tipus que ve del formulari i convertir-lo en el tipus que està creat a la bbddd
 
 
     //Es crea la consulta per inserir les dades del formulari index.html

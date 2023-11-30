@@ -22,6 +22,7 @@
     try {
         $conn = mysqli_connect($db_host, $db_user, $db_passwd, $db_name);
         echo "Connexió realitzada correctament.<br>";
+        //ERROR: Amb una connexió procedimental no és correcte agafar l'error amb exception ja que es per objectes
     } catch (Exception $e) {
         echo "No s'ha pogut realitzar la connexió.";
     }
