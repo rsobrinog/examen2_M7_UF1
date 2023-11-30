@@ -21,6 +21,7 @@ include('../iniciar_sessio/userLogin.php');
 <body>
     <h1>INFORMACIÓ USUARI</h1>
     <?php
+    //ERROR: això es feia des de userLogin.php (per això l'inclueixes)
     //Obté l'email que envio desde el login.
     $email = $_GET['email'];
     //Faig la query
@@ -28,7 +29,9 @@ include('../iniciar_sessio/userLogin.php');
     //Comprovo la connexió i la consulta.
     $result = mysqli_query($conn, $consulta);
 
+
     //Verifico que hi ha la informació del usuari.
+    //ERROR: s'ha d'agafar $response de UserLogin
     if (mysqli_num_rows($result) > 0) {
         //Faig un foreach que mostra la informacio per cada usuari.
         foreach ($result as $row) {
