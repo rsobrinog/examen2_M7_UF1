@@ -23,6 +23,7 @@
 
         try{
             $conn = mysqli_connect($db_host,$db_user,$db_passwd,$db_name);
+            //ERROR: La connexió és procedimental i Exception tracta errors d'objectes (PDO o new mysqli)
         } catch (Exception $e){
             echo ('Error al connectar amb la BBDD'.$e -> getMessage());
             exit;

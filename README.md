@@ -16,11 +16,11 @@ En aquest repositori hi trobareu els arxius pel segon examen de la UF1.
 
 ## AVALUACIÓ
 Si executa correctament, sobre una nota de 100 es resta:
- - De 1 a 4 errors => -20%
+ - De >1 a 4 errors => -20%
  - De 5 a 7 errors => -50%
  - Més de 8 errors => -70%
 
 error => deixar de fer una tasca que es demana que faci (codi, comentaris, ...).
 
 
- 
+ Errors totals => 1
